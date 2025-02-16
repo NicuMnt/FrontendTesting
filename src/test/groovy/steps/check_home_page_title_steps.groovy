@@ -1,19 +1,13 @@
 package steps
 
 import com.microsoft.playwright.Page
-import hooks.PlaywrightHooks
-import io.cucumber.java.en.Given
+import hooks.TestContext
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 
 class check_home_page_title_steps {
-    private Page page = PlaywrightHooks.page
-    private baseUrl = PlaywrightHooks.properties.getProperty("base.url")
-
-    @Given("I open the browser")
-    void openBrowser() {
-        // Browser is already initialized in hooks
-    }
+    private Page page = TestContext.page
+    private baseUrl = TestContext.properties.getProperty("base.url")
 
 
     @When("I navigate to the homepage")
@@ -26,5 +20,7 @@ class check_home_page_title_steps {
     void verifyTitle(String expectedTitle) {
         assert page.title().contains(expectedTitle)
     }
+
+
 }
 
