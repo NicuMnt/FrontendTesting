@@ -13,6 +13,7 @@ class login_steps {
         TestContext.signInPage
                 .clicksigninBtn()
                 .fillEmail("nn12345@gmail.com")
+        // keeping password in clear text, in a real world scenario it will be read from vault secrets or env vars at least.
                 .fillpassword("Uahufrif7!")
                 .clicksigninBtnlogin()
 
