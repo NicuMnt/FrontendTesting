@@ -1,6 +1,6 @@
 package pages
 
-import com.microsoft.playwright.ElementHandle
+
 import com.microsoft.playwright.Page
 import com.microsoft.playwright.Locator
 import com.microsoft.playwright.options.WaitForSelectorState
@@ -43,7 +43,7 @@ class JacketsShoppingPage {
 
         addToCartButton.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE))
 
-        // Pause for 1 second (1000 milliseconds)
+
         Thread.sleep(1000)
 
         addToCartButton.click()

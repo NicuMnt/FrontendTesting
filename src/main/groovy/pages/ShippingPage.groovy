@@ -4,7 +4,7 @@ import com.microsoft.playwright.Page
 class ShippingPage {
     Page page
 
-    // Locators
+
     String email_address = "(//input[@id=\"customer-email\"])[1]"
     String firstname = "//input[@name=\"firstname\"]"  //(//input[@class="input-text"])[4]
     String lastname = "(//input[@class=\"input-text\"])[5]"
@@ -101,7 +101,7 @@ class ShippingPageLoggedinUser {
         this.page = page
     }
 
-    String firstname = "//input[@name=\"firstname\"]"  //(//input[@class="input-text"])[4]
+    String firstname = "//input[@name=\"firstname\"]"
     String lastname = "(//input[@class=\"input-text\"])[4]"
     String company = "(//input[@class=\"input-text\"])[5]"
     String street_address = "(//input[@class=\"input-text\"])[6]"

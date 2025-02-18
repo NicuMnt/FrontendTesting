@@ -23,5 +23,10 @@ Before running the tests, ensure the following dependencies are installed:
 2. **Run tests:**
     Current support only for staging env
    ```bash
-    mvn test -Denv=staging     
+    mvn test -Denv=staging   
+   ```
+   
+3. **Run tests with tag:**
+    ```bash
+    mvn -Denv=staging -D"cucumber.filter.tags"="@with_account" test
    ```

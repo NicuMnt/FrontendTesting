@@ -11,7 +11,7 @@ class shipping_steps {
 
     @Then("I fill Shipping page")
     void shipping_page_fill() {
-        // Wait for the first field (email) to be visible before proceeding
+
         TestContext.shippingPage.page.waitForSelector(TestContext.shippingPage.email_address,
                 new Page.WaitForSelectorOptions().setState(WaitForSelectorState.VISIBLE))
 
