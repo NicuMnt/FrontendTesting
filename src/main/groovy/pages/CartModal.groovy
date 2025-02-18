@@ -23,7 +23,7 @@ class CartModal {
     // Elements to click
     private String cart_btn = "(//a[@class=\"action showcart\"])[1]"
     private String counter_quantity_btn = "(//span[@class=\"counter qty\"])[1]"
-    private String proceed_to_checkout_btn = "(//button[@id=\"top-cart-btn-checkout\"])[1]"
+    private String proceed_to_checkout_btn = "//button[@id=\"top-cart-btn-checkout\"]"
     private String see_details_toggle = "//span[@class=\"toggle\"]"
     private String edit_item = "//div[@class=\"product actions\"]/div[@class=\"primary\"]"
     private String delete_item = "//div[@class=\"product actions\"]/div[@class=\"secondary\"]"

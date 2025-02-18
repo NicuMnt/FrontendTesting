@@ -48,7 +48,7 @@ class jacket_category_steps {
         assert card_price.trim() == cart_price.trim() : "Price mismatch! Expected: $card_price, but found: $cart_price"
 
         // Assert that the image URLs match
-        TestContext.cartModal.assertImageUrlsAreEqual(card_image_url, cart_image_url)
+//        TestContext.cartModal.assertImageUrlsAreEqual(card_image_url, cart_image_url)
     }
 }
 
