@@ -16,6 +16,9 @@ class TestContext {
     static JacketsShoppingPage jacketsShoppingPage
     static NavBar navBar
     static HomePage homePage
+    static ShippingPage shippingPage
+    static SignInPage signInPage
+    static ShippingPageLoggedinUser shippingPageLoggedinUser
 
     // Combined Hook to load environment data and set up the browser and page
     @Before
@@ -53,14 +56,16 @@ class TestContext {
 
             println "Base URL: ${baseUrl}"
 
-            // Set up the browser and page
+            // Set up the browser and page in an incognito context
             if (baseUrl != null && !baseUrl.isEmpty()) {
                 String browserType = properties.getProperty("browser", "chromium")
                 boolean headless = properties.getProperty("headless", "false").toBoolean()
 
-                // Initialize Playwright and browser
+                // Initialize Playwright and launch the browser
                 BrowserType type = playwright."${browserType}"()
                 browser = type.launch(new BrowserType.LaunchOptions().setHeadless(headless))
+
+                // Each new context is isolated (i.e. incognito/private mode)
                 context = browser.newContext()
                 page = context.newPage()
 
@@ -72,6 +77,9 @@ class TestContext {
                 jacketsShoppingPage = new JacketsShoppingPage(page)
                 navBar = new NavBar(page)
                 homePage = new HomePage(page)
+                shippingPage = new ShippingPage(page)
+                signInPage = new SignInPage(page)
+                shippingPageLoggedinUser = new ShippingPageLoggedinUser(page)
             }
         }
     }

@@ -1,19 +1,22 @@
 package steps
 
-import com.microsoft.playwright.Page
+
 import hooks.TestContext
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import org.junit.Test
+
 
 class jacket_category_steps {
-    private Page page = TestContext.page
-    private baseUrl = TestContext.properties.getProperty("base.url")
+
 
 
     @When("I select the first jacket in the list")
     void SelectFirstJacket() {
-        TestContext.jacketsShoppingPage.clickJacketSize().clickSecondBlueColor().hoverJacketCard().clickAddToCart()
+        TestContext.jacketsShoppingPage
+                .clickJacketSize()
+                .clickSecondBlueColor()
+                .hoverJacketCard()
+                .clickAddToCart()
     }
 
     @Then("I validate shopping cart details")

@@ -1,6 +1,9 @@
 package pages
-import com.microsoft.playwright.Page
 
+import com.microsoft.playwright.ElementHandle
+import com.microsoft.playwright.Page
+import com.microsoft.playwright.Locator
+import com.microsoft.playwright.options.WaitForSelectorState
 class JacketsShoppingPage {
     Page page
 
@@ -36,9 +39,18 @@ class JacketsShoppingPage {
     }
 
     JacketsShoppingPage clickAddToCart() {
-        page.click(add_to_cart_button_first)
+        Locator addToCartButton = page.locator(add_to_cart_button_first)
+
+        addToCartButton.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE))
+
+        // Pause for 1 second (1000 milliseconds)
+        Thread.sleep(1000)
+
+        addToCartButton.click()
         return this
     }
+
+
 
     String getCardPrice() {
         return page.textContent(card_price)

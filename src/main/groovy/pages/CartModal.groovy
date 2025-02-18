@@ -27,6 +27,7 @@ class CartModal {
     private String see_details_toggle = "//span[@class=\"toggle\"]"
     private String edit_item = "//div[@class=\"product actions\"]/div[@class=\"primary\"]"
     private String delete_item = "//div[@class=\"product actions\"]/div[@class=\"secondary\"]"
+    private String confirm_delete_btn = "//button[@class=\"action-primary action-accept\"]"
 
     // Elements to get text from
     private String counter_number = "(//span[@class=\"counter-number\"])[1]"
@@ -44,11 +45,17 @@ class CartModal {
         this.page = page
     }
 
-    void clickCartButton() {
+    CartModal clickCartButton() {
         page.waitForSelector("//span[@class='counter-number'][text()='1']", new Page.WaitForSelectorOptions().setTimeout(15000))
         page.click(cart_btn)
+        return this
     }
 
+    CartModal clickConfirmDelete() {
+        page.waitForSelector("//span[@class='counter-number'][text()='1']", new Page.WaitForSelectorOptions().setTimeout(15000))
+        page.click(confirm_delete_btn)
+        return this
+    }
 
     void clickCounterQuantityButton() {
         page.click(counter_quantity_btn)
@@ -66,8 +73,9 @@ class CartModal {
         page.click(edit_item)
     }
 
-    void clickDeleteItem() {
+    CartModal clickDeleteItem() {
         page.click(delete_item)
+        return this
     }
 
     // Get Text Methods
@@ -115,7 +123,7 @@ class CartModal {
     }
 
     void assertColorIsBlue() {
-        assert getProductOptionList().contains("Blue"): "Color should be Blue"
+        assert getProductOptionList().contains("Blue"): "Color should be Blue, optionlist is " + getProductOptionList()
     }
 
     void assertImageUrlsAreEqual(String imageUrl1, String imageUrl2) {

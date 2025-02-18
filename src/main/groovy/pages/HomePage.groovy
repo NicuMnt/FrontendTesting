@@ -6,6 +6,7 @@ class HomePage {
 
     String cart_btn = '//span[@data-ui-id="page-title-wrapper"]'
 
+
     HomePage(Page page) {
         this.page = page
     }
@@ -15,4 +16,6 @@ class HomePage {
 
         assert title == "Home Page" : "Expected page title to be 'Home Page', but found '${title}'"
     }
+
+
 }
