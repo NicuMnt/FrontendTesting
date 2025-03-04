@@ -1,4 +1,4 @@
-# ZitexFrontendTesting Framework
+# FrontendTesting Framework
 
 This project is a frontend testing framework using **Playwright**, **Cucumber**, and **Groovy** for automated browser testing. The framework is designed to support different environments (e.g., **staging**, **production**) and can be run using **Maven**.
 
