@@ -17,7 +17,7 @@ Before running the tests, ensure the following dependencies are installed:
 
    ```bash
    git clone https://github.com/your-repository.git
-   cd ZitexFrontendTesting
+   cd FrontendTesting
    ```
 
 2. **Run tests:**
